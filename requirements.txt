@@ -1,2 +1,1 @@
-streamlit==1.25.0
-translators==5.8.2
+translatepy==2.3

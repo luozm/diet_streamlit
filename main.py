@@ -1,6 +1,8 @@
 import streamlit as st
 import json
-import translators as ts
+#import translators as ts
+from translatepy.translators.google import GoogleTranslate
+gtranslate = GoogleTranslate()
 
 
 def extract_unique_ingredients():
@@ -138,7 +140,8 @@ def match_ingredients():
         st.info(f"剩余未匹配食材数量：{len(unmatched_ingredients)}")
         # 显示第一个未匹配的食材
         ingredient_to_match = unmatched_ingredients[0]
-        translation = ts.translate_text(ingredient_to_match, from_language='zh-Hans', to_language='en')
+        translation = gtranslate.translate(ingredient_to_match, "English")
+        # translation = ts.translate_text(ingredient_to_match, from_language='zh-Hans', to_language='en')
         # 搜索框
         search_term = st.text_input(f"搜索并选择 {ingredient_to_match} (英文：{translation}):", value=translation, help="可同时搜索多个关键词，用英文逗号隔开")
         search_list = search_term.split(",")
