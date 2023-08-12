@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import translators as ts
-from thefuzz import process
+#from thefuzz import process
 
 
 # 常见食材的营养值（每100克）
