@@ -150,4 +150,27 @@ if __name__ == '__main__':
     recipes_normed = normalize_and_concat_new_recipes(recipes, recipes_new)
     with open('recipes_normed.json', 'w', encoding='utf-8') as file:
         json.dump(recipes_normed, file, indent=4, ensure_ascii=False)
+
+    # calculate_nutrition_from_FDC_survey()
+
+
+    # with open('fdc_foundation_nutrition.json', 'r', encoding='utf-8') as file:
+    #     FDC_foundation = json.load(file)
+    # ingredients_set = extract_unique_ingredients()
+    # # translations
+    # ingredients_en2cn = {}
+    # ingredients_cn2en = {}
+    # for ingredient in ingredients_set:
+    #     translation = ts.translate_text(ingredient, from_language='zh-Hans', to_language='en')
+    #     ingredients_en2cn[translation] = ingredient
+    #     ingredients_cn2en[ingredient] = translation
+    # # matching
+    # FDC_names = list(FDC_foundation.keys())
+    # matched_ingredients = {}
+    # for ingredient in ingredients_set:
+    #     ingredient_en = ingredients_cn2en[ingredient]
+    #     name_matched, score = process.extractOne(ingredient_en, FDC_names)
+    #     if score > 90:  # 你可以根据需要调整匹配阈值
+    #         matched_ingredients[ingredient] = name_matched
+    # nutrition_info = [FDC_foundation[match] for match in matched_ingredients.values()]
     print()
